@@ -24,7 +24,7 @@ REGCOMMENT = re.compile('<!--.*?-->', flags=re.U | re.DOTALL)
 
 
 def download_page():
-        for k in range (1,763): # переход по страницам с новостями (12 штук на каждой странице) выкачала до 633, всего -- 763 (3.10.17)
+        for k in range (1,763): # переход по страницам с новостями (12 штук на каждой странице) всего -- 763 (3.10.17)
                 textpage = ""
                 number = str(k + 1)
                 page = urllib.request.urlopen(PAGEURL + number)
