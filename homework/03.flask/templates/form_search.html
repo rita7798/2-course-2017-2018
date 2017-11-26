@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<title>Поиск</title>    
+    </head>
+<body>
+	<form action="http://127.0.0.1:5000/results" method="GET">
+    	Результаты для какого из вариантов вы хотели бы увидеть:<br>{% for k in arr1 %}<input type="radio" name="degree" value="{{ k }}">{{ k }}<br>{% endfor %}<br>
+    	<input type="submit" value="Показать"><br><br>
+    	<img src='/static/search.jpg' /><br>
+    	<h4 align="left"><a href="/main">Вернуться назад</h4>
+	</form>
+</body>
+</html>

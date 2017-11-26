@@ -1,0 +1,16 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+ 	 	<title>Статистика</title>
+    </head>
+<body>
+	<form action="http://127.0.0.1:5000/stats" method="GET">
+		<h2>Процентное соотношение правильных ответов к общему количеству опрошенных:</h2>
+		<h3>Всего приняло участие {{ total }} человек(а).</h3>
+    	{% for key, value in d.items() %}Правильно ответили на {{ key }} вопрос <b>{{ value }} %</b> опрошенных.<br>{% endfor %}<br>
+    	<img src='/static/stats.jpg' />
+    	<h4 align="left"><a href="/main">Вернуться назад</h4>
+	</form>
+</body>
+</html>

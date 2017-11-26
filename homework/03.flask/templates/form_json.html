@@ -1,0 +1,12 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Данные</title>    
+    </head>
+<body>
+	<form action="http://127.0.0.1:5000/json" method="GET">
+	{% for i in arr %}{% for key, value in i.items() %}<b>{{ key }}</b> : <em>{{ value }}</em><br>{% endfor %}<br>{% endfor %}
+	<h4 align="left"><a href="/main">Вернуться назад</h4>
+</body>
+</html>

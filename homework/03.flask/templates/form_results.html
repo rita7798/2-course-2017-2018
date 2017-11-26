@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Результаты</title>    
+    </head>
+<body>
+	<form action="http://127.0.0.1:5000/results" method="GET">
+    	<p>Выбранный параметр: <b>{{ degree }} образование.</b></p>
+    	Вот такие ответы давали люди с таким же образованием:<p><em><h3>{% for k in arr2 %}{{ k }}<br>{% endfor %}</h3></em></p>
+    	<h4 align="left"><a href="/main">Вернуться назад</h4>
+	</form>
+</body>
+</html>

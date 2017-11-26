@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    	<title>Анкета</title>    
+    </head>
+<body>
+	<h2>Здравствуйте!</h2>
+	<h3>Примите участие в анкетировании, это не займет у Вас более треx минут!</h3>
+		<form action="http://127.0.0.1:5000/thanks" method="GET">
+			Ваше имя и возраст:<br>{% for i in arr1 %}<input type="text" name="{{ i }}"><br>{% endfor %}<br>
+    		Ваше образование:<br>{% for k in arr3 %}<input type="radio" name="degree" value="{{ k }}">{{ k }}<br>{% endfor %}<br>  
+    		{% for n in arr4 %}<img src='/static/{{ n }}.jpg' /><br>
+    		{{ n }}. Эта достопримечательность находится в городе  <input type="text" name="{{ n }}"><br><br>{% endfor %}<br>
+    		<input type="submit" value="Отправить">
+		</form>
+</body>
+</html>
