@@ -1,0 +1,15 @@
+﻿<form action="http://127.0.0.1:5000/answer" method="GET">
+    Ваше имя и возраст:<br>
+    {% for i in arr1 %}
+    <input type="text" name="{{ i }}"><br>
+    {% endfor %}
+    Ваш пол:<br>
+    {% for j in arr2 %}
+    <input type="radio" name="sex" value="{{ j }}">{{ j }}<br>
+    {% endfor %}
+    Выберите вариант, как вы говорите:<br>
+    {% for k in arr3 %}
+    <input type="radio"  name="choice" value="{{ k }}">{{ k }}<br>
+    {% endfor %}
+    <input type="submit" value="Отправить">
+</form>
