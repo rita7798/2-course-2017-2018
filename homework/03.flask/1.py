@@ -95,7 +95,6 @@ def statictics(total=None, d=None):
     d = dict()
     with open("data.json", 'r', encoding="utf-8") as f:       
         data = json.load(f)
-        print(data)
         total = len(data)
     for i in range(len(data)):
         if "Москве" == data[i]["1"]:

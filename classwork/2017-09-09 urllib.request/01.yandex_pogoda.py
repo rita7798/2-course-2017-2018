@@ -6,6 +6,7 @@ def getting_code():
     request = urllib.request.Request('https://yandex.ru/pogoda/moscow')
     with urllib.request.urlopen(request) as response:
        code = response.read().decode('utf-8')
+       print(code)
     return code
 
 
