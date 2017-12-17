@@ -1,7 +1,7 @@
 ADJ — adjective
 ADV — adverb
 AUX — auxiliary 
-COMP — complementizer
+C — complementizer
 CONJ — conjunction
 CONN — connective
 DEM — demonstrative pronoun
@@ -15,6 +15,34 @@ POSS — possessive pronoun
 PRON — pronoun
 PRV — preverb
 PTCP — participle
+REFL — reflexive pronoun
 REL — relative pronoun
 Q — question word
 V — verb
+PRT — preterite
+PRS — present
+PST — past
+IMPF — imperfect
+ENCL — enclitic
+INF — infinitive
+EMPH — emphatic
+QUOT — quotative
+IMP — imperative
+PERS — personal
+NOM — nominative
+GEN — genitive
+DAT — dative
+DAT-LOC — dative-locative
+ACC — accusative
+INSTR — instrumental
+ABL — ablative
+LOC — locative
+VOC — vocative
+SG — singular
+PL — plural
+1SG — first person singular
+2SG — second person singular
+3SG — third person singular
+1PL — first person plural
+2PL — second person plural
+3PL — third person plural
