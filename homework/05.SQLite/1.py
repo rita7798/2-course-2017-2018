@@ -17,82 +17,82 @@ def db_1():
             j += 1
             break
     conn = sqlite3.connect("words.sqlite")
-    c1 = conn.cursor()
-    c1.execute("""CREATE TABLE
+    c = conn.cursor()
+    c.execute("""CREATE TABLE
                          IF NOT EXISTS words
                          (id INTEGER PRIMARY KEY, lemma TEXT, wordform TEXT, glosses TEXT)""")
     for i in d:
-        c1.execute("""INSERT INTO words
-                            (lemma, wordform, glosses)
-                            VALUES (?,?,?)""", (d[i][0], d[i][1], d[i][2]))
+        c.execute("""INSERT INTO words
+                           (lemma, wordform, glosses)
+                           VALUES (?,?,?)""", (d[i][0], d[i][1], d[i][2]))
     conn.commit()
 
 
 def db_2():
     conn = sqlite3.connect("glosses.sqlite")
-    c2 = conn.cursor()
+    c = conn.cursor()
     d = {}
     with open ("Glossing_rules.txt", "r", encoding="utf-8") as f:
         text = f.read().replace("\n",  " — ").split(" — ")
-        for i in range(0,len(text),2):
+        for i in range(0, len(text), 2):
             d[text[i]] = text[i+1]
-    c2.execute("""CREATE TABLE
-                         IF NOT EXISTS glosses
-                         (id INTEGER PRIMARY KEY, name TEXT, transcript TEXT)""")
-    for k,v in d.items():
-        c2.execute("""INSERT INTO glosses
-                            (name, transcript)
-                            VALUES (?,?)""", (k, v))
+    c.execute("""CREATE TABLE
+                       IF NOT EXISTS glosses
+                       (id INTEGER PRIMARY KEY, name TEXT, transcript TEXT)""")
+    for k, v in d.items():
+        c.execute("""INSERT INTO glosses
+                           (name, transcript)
+                           VALUES (?,?)""", (k, v))
     conn.commit()
     return d
 
 
 def db_3(d):
     a = ["C", "N", "P", "Q", "V"] 
-    for k,v in d.items():
+    for k, v in d.items():
         conn = sqlite3.connect("words.sqlite")
-        c4 = conn.cursor()
+        c = conn.cursor()
         if k not in a:
-            c4.execute("""SELECT id
-                                 FROM words
-                                 WHERE glosses
-                                 LIKE \"%{}%\"""".format(k))
-            t = c4.fetchall()
+            c.execute("""SELECT id
+                               FROM words
+                               WHERE glosses
+                               LIKE \"%{}%\"""".format(k))
+            t = c.fetchall()
         else:
-            c4.execute("""SELECT id
-                                 FROM words
-                                 WHERE glosses
-                                 LIKE \"% {} %\"""".format(k))
-            t = c4.fetchall()
+            c.execute("""SELECT id
+                               FROM words
+                               WHERE glosses
+                               LIKE \"% {} %\"""".format(k))
+            t = c.fetchall()
         if t != []:
             conn = sqlite3.connect("glosses.sqlite")
-            c5 = conn.cursor()
-            c5.execute("""SELECT id
-                                 FROM glosses
-                                 WHERE name
-                                 LIKE \"{}\"""".format(k))
-            m = c5.fetchone()
+            c = conn.cursor()
+            c.execute("""SELECT id
+                               FROM glosses
+                               WHERE name
+                               LIKE \"{}\"""".format(k))
+            m = c.fetchone()
             for arr in t:
                 for i in arr:
                     for j in m:
                         conn = sqlite3.connect("w-to-g.sqlite")
-                        c3 = conn.cursor()
-                        c3.execute("""CREATE TABLE
-                                            IF NOT EXISTS words_to_glosses
-                                            (id_word INTEGER, id_gloss INTEGER)""")
-                        c3.execute("""INSERT INTO words_to_glosses
-                                            (id_word, id_gloss)
-                                            VALUES (?,?)""", (i, j))
+                        c = conn.cursor()
+                        c.execute("""CREATE TABLE
+                                           IF NOT EXISTS words_to_glosses
+                                           (id_word INTEGER, id_gloss INTEGER)""")
+                        c.execute("""INSERT INTO words_to_glosses
+                                           (id_word, id_gloss)
+                                           VALUES (?,?)""", (i, j))
                         conn.commit()
 
 
 def values():
     d = {}
     conn = sqlite3.connect("glosses.sqlite")
-    c6 = conn.cursor()
-    c6.execute("""SELECT id
-                         FROM glosses""")
-    m = c6.fetchall()
+    c = conn.cursor()
+    c.execute("""SELECT id
+                       FROM glosses""")
+    m = c.fetchall()
     graph_1(m)
     graph_2(m)
     graph_3(m)
@@ -106,28 +106,29 @@ def graph_1(m):
     y1 = []
     for arr in m:
         for i in arr:
-            if i<= 21:
+            if i<= 17:
                 conn = sqlite3.connect("w-to-g.sqlite")
-                c7 = conn.cursor()
-                c7.execute("""SELECT id_gloss
-                                     FROM  words_to_glosses
-                                     WHERE id_gloss = \"{}\" """.format(i))
-                n = c7.fetchall()
-                if (len(n)) != 0:
-                    y1.append((len(n)))
+                c = conn.cursor()
+                c.execute("""SELECT id_gloss
+                                   FROM  words_to_glosses
+                                   WHERE id_gloss = \"{}\" """.format(i))
+                n = c.fetchall()
+                l = len(n)
+                if l != 0:
+                    y1.append(l)
                     conn = sqlite3.connect("glosses.sqlite")
-                    c8 = conn.cursor()
-                    c8.execute("""SELECT name
-                                         FROM glosses
-                                         WHERE id = \"{}\" """.format(i))
-                    p = c8.fetchone()
+                    c = conn.cursor()
+                    c.execute("""SELECT name
+                                       FROM glosses
+                                       WHERE id = \"{}\" """.format(i))
+                    p = c.fetchone()
                     for k in p:
                         x1.append(k)
             else:
                     continue
     plt.rc('xtick', labelsize=7) 
-    plt.bar(x1, y1)
-    plt.title("1")
+    plt.bar(x1, y1, color = "#137e6d")
+    plt.title("Parts of speech")
     plt.xlabel("gloss")
     plt.ylabel("quantity")
     plt.savefig('plot_1.png')
@@ -139,27 +140,28 @@ def graph_2(m):
     y2 = []
     for arr in m:
         for i in arr:
-            if 22<=i<=24:
+            if 18<=i<=23:
                 conn = sqlite3.connect("w-to-g.sqlite")
-                c10 = conn.cursor()
-                c10.execute("""SELECT id_gloss
-                                     FROM  words_to_glosses
-                                     WHERE id_gloss = \"{}\" """.format(i))
-                n = c10.fetchall()
-                if (len(n)) != 0:
-                    y2.append((len(n)))
+                c = conn.cursor()
+                c.execute("""SELECT id_gloss
+                                   FROM  words_to_glosses
+                                   WHERE id_gloss = \"{}\" """.format(i))
+                n = c.fetchall()
+                l = len(n)
+                if l != 0:
+                    y2.append(l)
                     conn = sqlite3.connect("glosses.sqlite")
-                    c11 = conn.cursor()
-                    c11.execute("""SELECT name
-                                         FROM glosses
-                                         WHERE id = \"{}\" """.format(i))
-                    p = c11.fetchone()
+                    c = conn.cursor()
+                    c.execute("""SELECT name
+                                       FROM glosses
+                                       WHERE id = \"{}\" """.format(i))
+                    p = c.fetchone()
                     for k in p:
                         x2.append(k)
             else:
                     continue
-    plt.bar(x2, y2)
-    plt.title("2")
+    plt.bar(x2, y2, color = "#cb7723")
+    plt.title("Verbs")
     plt.xlabel("gloss")
     plt.ylabel("quantity")
     plt.savefig('plot_2.png')
@@ -171,27 +173,28 @@ def graph_3(m):
     y3 = []
     for arr in m:
         for i in arr:
-            if 25<=i<=31:
+            if 24<=i<=26:
                 conn = sqlite3.connect("w-to-g.sqlite")
-                c7 = conn.cursor()
-                c7.execute("""SELECT id_gloss
-                                     FROM  words_to_glosses
-                                     WHERE id_gloss = \"{}\" """.format(i))
-                n = c7.fetchall()
-                if (len(n)) != 0:
-                    y3.append((len(n)))
+                c = conn.cursor()
+                c.execute("""SELECT id_gloss
+                                   FROM  words_to_glosses
+                                   WHERE id_gloss = \"{}\" """.format(i))
+                n = c.fetchall()
+                l = len(n)
+                if l != 0:
+                    y3.append(l)
                     conn = sqlite3.connect("glosses.sqlite")
-                    c8 = conn.cursor()
-                    c8.execute("""SELECT name
-                                         FROM glosses
-                                         WHERE id = \"{}\" """.format(i))
-                    p = c8.fetchone()
+                    c = conn.cursor()
+                    c.execute("""SELECT name
+                                       FROM glosses
+                                       WHERE id = \"{}\" """.format(i))
+                    p = c.fetchone()
                     for k in p:
                         x3.append(k)
             else:
                     continue
-    plt.bar(x3, y3)
-    plt.title("3")
+    plt.bar(x3, y3, color = "#9e003a")
+    plt.title("Particles")
     plt.xlabel("gloss")
     plt.ylabel("quantity")
     plt.savefig('plot_3.png')
@@ -203,27 +206,28 @@ def graph_4(m):
     y4 = []
     for arr in m:
         for i in arr:
-            if 32<=i<=40:
+            if 27<=i<=35:
                 conn = sqlite3.connect("w-to-g.sqlite")
-                c7 = conn.cursor()
-                c7.execute("""SELECT id_gloss
-                                     FROM  words_to_glosses
-                                     WHERE id_gloss = \"{}\" """.format(i))
-                n = c7.fetchall()
-                if (len(n)) != 0:
-                    y4.append((len(n)))
+                c = conn.cursor()
+                c.execute("""SELECT id_gloss
+                                   FROM  words_to_glosses
+                                   WHERE id_gloss = \"{}\" """.format(i))
+                n = c.fetchall()
+                l = len(n)
+                if l != 0:
+                    y4.append(l)
                     conn = sqlite3.connect("glosses.sqlite")
-                    c8 = conn.cursor()
-                    c8.execute("""SELECT name
-                                         FROM glosses
-                                         WHERE id = \"{}\" """.format(i))
-                    p = c8.fetchone()
+                    c = conn.cursor()
+                    c.execute("""SELECT name
+                                       FROM glosses
+                                       WHERE id = \"{}\" """.format(i))
+                    p = c.fetchone()
                     for k in p:
                         x4.append(k)
             else:
                     continue
-    plt.bar(x4, y4)
-    plt.title("4")
+    plt.bar(x4, y4, color = "#155084")
+    plt.title("Cases")
     plt.xlabel("gloss")
     plt.ylabel("quantity")
     plt.savefig('plot_4.png')
@@ -235,27 +239,28 @@ def graph_5(m):
     y5 = []
     for arr in m:
         for i in arr:
-            if 41<=i<=42:
+            if 36<=i<=37:
                 conn = sqlite3.connect("w-to-g.sqlite")
-                c7 = conn.cursor()
-                c7.execute("""SELECT id_gloss
-                                     FROM  words_to_glosses
-                                     WHERE id_gloss = \"{}\" """.format(i))
-                n = c7.fetchall()
-                if (len(n)) != 0:
-                    y5.append((len(n)))
+                c = conn.cursor()
+                c.execute("""SELECT id_gloss
+                                   FROM  words_to_glosses
+                                   WHERE id_gloss = \"{}\" """.format(i))
+                n = c.fetchall()
+                l = len(n)
+                if l != 0:
+                    y5.append(l)
                     conn = sqlite3.connect("glosses.sqlite")
-                    c8 = conn.cursor()
-                    c8.execute("""SELECT name
-                                         FROM glosses
-                                         WHERE id = \"{}\" """.format(i))
-                    p = c8.fetchone()
+                    c = conn.cursor()
+                    c.execute("""SELECT name
+                                       FROM glosses
+                                       WHERE id = \"{}\" """.format(i))
+                    p = c.fetchone()
                     for k in p:
                         x5.append(k)
             else:
                     continue
-    plt.bar(x5, y5)
-    plt.title("5")
+    plt.bar(x5, y5, color = "#fbdd7e")
+    plt.title("Category of number")
     plt.xlabel("gloss")
     plt.ylabel("quantity")
     plt.savefig('plot_5.png')
@@ -267,27 +272,28 @@ def graph_6(m):
     y6 = []
     for arr in m:
         for i in arr:
-            if 43<=i<=48:
+            if 38<=i<=43:
                 conn = sqlite3.connect("w-to-g.sqlite")
-                c7 = conn.cursor()
-                c7.execute("""SELECT id_gloss
-                                     FROM  words_to_glosses
-                                     WHERE id_gloss = \"{}\" """.format(i))
-                n = c7.fetchall()
-                if (len(n)) != 0:
-                    y6.append((len(n)))
+                c = conn.cursor()
+                c.execute("""SELECT id_gloss
+                                   FROM  words_to_glosses
+                                   WHERE id_gloss = \"{}\" """.format(i))
+                n = c.fetchall()
+                l = len(n)
+                if l != 0:
+                    y6.append(l)
                     conn = sqlite3.connect("glosses.sqlite")
-                    c8 = conn.cursor()
-                    c8.execute("""SELECT name
-                                         FROM glosses
-                                         WHERE id = \"{}\" """.format(i))
-                    p = c8.fetchone()
+                    c = conn.cursor()
+                    c.execute("""SELECT name
+                                       FROM glosses
+                                       WHERE id = \"{}\" """.format(i))
+                    p = c.fetchone()
                     for k in p:
                         x6.append(k)
             else:
                     continue
-    plt.bar(x6, y6)
-    plt.title("6")
+    plt.bar(x6, y6, color = "#fd798f")
+    plt.title("Grammatical person + category of number")
     plt.xlabel("gloss")
     plt.ylabel("quantity")
     plt.savefig('plot_6.png')

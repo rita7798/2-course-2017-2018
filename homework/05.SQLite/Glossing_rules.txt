@@ -4,31 +4,26 @@ AUX — auxiliary
 C — complementizer
 CONJ — conjunction
 CONN — connective
-DEM — demonstrative pronoun
-INDEF — indefinite pronoun
 N — noun
 NEG — negative
 NUM — cardinal
 P — preposition (postposition)
 PART — particle
-POSS — possessive pronoun
 PRON — pronoun
 PRV — preverb
 PTCP — participle
 REFL — reflexive pronoun
-REL — relative pronoun
 Q — question word
 V — verb
 PRT — preterite
 PRS — present
 PST — past
 IMPF — imperfect
-ENCL — enclitic
 INF — infinitive
+IMP — imperative
+ENCL — enclitic
 EMPH — emphatic
 QUOT — quotative
-IMP — imperative
-PERS — personal
 NOM — nominative
 GEN — genitive
 DAT — dative
