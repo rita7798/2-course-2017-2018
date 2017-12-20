@@ -43,7 +43,7 @@ def stage_2(req, data):
         res1 = REGWORD.search(result).group(1)
     if res1 in data:
         print("есть в словаре, но другая форма")
-        a = stage_3(result, req) #подумать здесь!
+        a = stage_3(result, req)
     else:
         print("нет в словаре")
         a = stage_4(result, req)
@@ -87,9 +87,9 @@ def stage_4(result, req):
             try:
                 case = REGCASE.search(result).group(1)
                 if  case == "дат,ед":
-                    res_2 = res_2[:-1] + "ѣ"
+                    res_2 = req[:-1] + "ѣ"
                 elif  case == "пр,ед":
-                    res_2 = res_2[:-1] + "ѣ"
+                    res_2 = req[:-1] + "ѣ"
                 else:
                     res_2 = req
             except:
