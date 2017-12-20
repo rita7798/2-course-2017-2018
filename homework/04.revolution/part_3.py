@@ -15,7 +15,6 @@ REGPUNC = re.compile("[\"...\",\\:«»]", flags=re.U | re.DOTALL)
 
 
 def opening():
-    a = []
     page = urllib.request.urlopen("https://russian.rt.com")
     text = page.read().decode('utf-8')
     clean_t = cleaning(text)
