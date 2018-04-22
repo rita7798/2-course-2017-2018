@@ -1,2 +1,2 @@
 ### здесь хранится файл с собранными постами и комментариями из сообщества Mash
-*https://yadi.sk/i/KJxybwno3UUWrL*
+*https://yadi.sk/i/2jHw_63n3Uf6EW*
