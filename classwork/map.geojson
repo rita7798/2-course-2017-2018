@@ -1,0 +1,790 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "layer": "48A-4",
+    "domain": [
+      {
+        "name": "No adpositions",
+        "icon": "http://wals.info/static/icons/cfff.png",
+        "id": "48A-1"
+      },
+      {
+        "name": "No person marking",
+        "icon": "http://wals.info/static/icons/c00d.png",
+        "id": "48A-2"
+      },
+      {
+        "name": "Pronouns only",
+        "icon": "http://wals.info/static/icons/cf6f.png",
+        "id": "48A-3"
+      },
+      {
+        "name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "id": "48A-4"
+      }
+    ],
+    "name": "Person Marking on Adpositions"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Abkhaz",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 325,
+          "jsondata": {},
+          "samples_100": true,
+          "id": "abk",
+          "iso_codes": "abk",
+          "latitude": 43.0833333333,
+          "macroarea": "Eurasia",
+          "pk": 2534,
+          "ascii_name": "abkhaz",
+          "name": "Abkhaz",
+          "description": null,
+          "markup_description": null,
+          "longitude": 41
+        }
+      },
+      "id": "abk",
+      "geometry": {
+        "coordinates": [
+          41,
+          43.0833333333
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Bororo",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 242,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "brr",
+          "iso_codes": "bor",
+          "latitude": -16,
+          "macroarea": "South America",
+          "pk": 2247,
+          "ascii_name": "bororo",
+          "name": "Bororo",
+          "description": null,
+          "markup_description": null,
+          "longitude": -57
+        }
+      },
+      "id": "brr",
+      "geometry": {
+        "coordinates": [
+          303,
+          -16
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Carib",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 119,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "car",
+          "iso_codes": "car",
+          "latitude": 5.5,
+          "macroarea": "South America",
+          "pk": 2378,
+          "ascii_name": "carib",
+          "name": "Carib",
+          "description": null,
+          "markup_description": null,
+          "longitude": -56
+        }
+      },
+      "id": "car",
+      "geometry": {
+        "coordinates": [
+          304,
+          5.5
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Cora",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 471,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "cor",
+          "iso_codes": "crn",
+          "latitude": 22.1666666667,
+          "macroarea": "North America",
+          "pk": 2020,
+          "ascii_name": "cora",
+          "name": "Cora",
+          "description": null,
+          "markup_description": null,
+          "longitude": -104.833333333
+        }
+      },
+      "id": "cor",
+      "geometry": {
+        "coordinates": [
+          255.16666666700002,
+          22.1666666667
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Fijian",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 87,
+          "jsondata": {},
+          "samples_100": true,
+          "id": "fij",
+          "iso_codes": "fij",
+          "latitude": -17.8333333333,
+          "macroarea": "Papunesia",
+          "pk": 2510,
+          "ascii_name": "fijian",
+          "name": "Fijian",
+          "description": null,
+          "markup_description": null,
+          "longitude": 178
+        }
+      },
+      "id": "fij",
+      "geometry": {
+        "coordinates": [
+          178,
+          -17.8333333333
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Jakaltek",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 250,
+          "jsondata": {},
+          "samples_100": true,
+          "id": "jak",
+          "iso_codes": "jac, jai",
+          "latitude": 15.6666666667,
+          "macroarea": "North America",
+          "pk": 2487,
+          "ascii_name": "jakaltek",
+          "name": "Jakaltek",
+          "description": null,
+          "markup_description": null,
+          "longitude": -91.6666666667
+        }
+      },
+      "id": "jak",
+      "geometry": {
+        "coordinates": [
+          268.3333333333,
+          15.6666666667
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Kawaiisu",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 477,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "kws",
+          "iso_codes": "xaw",
+          "latitude": 36,
+          "macroarea": "North America",
+          "pk": 2112,
+          "ascii_name": "kawaiisu",
+          "name": "Kawaiisu",
+          "description": null,
+          "markup_description": null,
+          "longitude": -117.5
+        }
+      },
+      "id": "kws",
+      "geometry": {
+        "coordinates": [
+          242.5,
+          36
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Ket",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 503,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "ket",
+          "iso_codes": "ket",
+          "latitude": 64,
+          "macroarea": "Eurasia",
+          "pk": 2458,
+          "ascii_name": "ket",
+          "name": "Ket",
+          "description": null,
+          "markup_description": null,
+          "longitude": 87
+        }
+      },
+      "id": "ket",
+      "geometry": {
+        "coordinates": [
+          87,
+          64
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Kiribati",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 87,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "krb",
+          "iso_codes": "gil",
+          "latitude": 1.33333333333,
+          "macroarea": "Papunesia",
+          "pk": 2363,
+          "ascii_name": "kiribati",
+          "name": "Kiribati",
+          "description": null,
+          "markup_description": null,
+          "longitude": 173
+        }
+      },
+      "id": "krb",
+      "geometry": {
+        "coordinates": [
+          173,
+          1.33333333333
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Lavukaleve",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 396,
+          "jsondata": {},
+          "samples_100": true,
+          "id": "lav",
+          "iso_codes": "lvk",
+          "latitude": -9.08333333333,
+          "macroarea": "Papunesia",
+          "pk": 2484,
+          "ascii_name": "lavukaleve",
+          "name": "Lavukaleve",
+          "description": null,
+          "markup_description": null,
+          "longitude": 159.2
+        }
+      },
+      "id": "lav",
+      "geometry": {
+        "coordinates": [
+          159.2,
+          -9.08333333333
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Maybrat",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 493,
+          "jsondata": {},
+          "samples_100": true,
+          "id": "may",
+          "iso_codes": "ayz",
+          "latitude": -1.33333333333,
+          "macroarea": "Papunesia",
+          "pk": 2505,
+          "ascii_name": "maybrat",
+          "name": "Maybrat",
+          "description": null,
+          "markup_description": null,
+          "longitude": 132.5
+        }
+      },
+      "id": "may",
+      "geometry": {
+        "coordinates": [
+          132.5,
+          -1.33333333333
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Navajo",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 262,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "nav",
+          "iso_codes": "nav",
+          "latitude": 36.1666666667,
+          "macroarea": "North America",
+          "pk": 2416,
+          "ascii_name": "navajo",
+          "name": "Navajo",
+          "description": null,
+          "markup_description": null,
+          "longitude": -108
+        }
+      },
+      "id": "nav",
+      "geometry": {
+        "coordinates": [
+          252,
+          36.1666666667
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Palikur",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 533,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "plk",
+          "iso_codes": "plu",
+          "latitude": 3,
+          "macroarea": "South America",
+          "pk": 2028,
+          "ascii_name": "palikur",
+          "name": "Palikur",
+          "description": null,
+          "markup_description": null,
+          "longitude": -51
+        }
+      },
+      "id": "plk",
+      "geometry": {
+        "coordinates": [
+          309,
+          3
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Pipil",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 476,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "pip",
+          "iso_codes": "ppl",
+          "latitude": 13.8333333333,
+          "macroarea": "North America",
+          "pk": 2324,
+          "ascii_name": "pipil",
+          "name": "Pipil",
+          "description": null,
+          "markup_description": null,
+          "longitude": -89.5833333333
+        }
+      },
+      "id": "pip",
+      "geometry": {
+        "coordinates": [
+          270.4166666667,
+          13.8333333333
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Takelma",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 407,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "tkl",
+          "iso_codes": "tkm",
+          "latitude": 42.5,
+          "macroarea": "North America",
+          "pk": 2212,
+          "ascii_name": "takelma",
+          "name": "Takelma",
+          "description": null,
+          "markup_description": null,
+          "longitude": -123
+        }
+      },
+      "id": "tkl",
+      "geometry": {
+        "coordinates": [
+          237,
+          42.5
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Nahuatl (Tetelcingo)",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 476,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "nht",
+          "iso_codes": "nhg",
+          "latitude": 19.6666666667,
+          "macroarea": "North America",
+          "pk": 2429,
+          "ascii_name": "nahuatl (tetelcingo)",
+          "name": "Nahuatl (Tetelcingo)",
+          "description": null,
+          "markup_description": null,
+          "longitude": -99
+        }
+      },
+      "id": "nht",
+      "geometry": {
+        "coordinates": [
+          261,
+          19.6666666667
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Tlingit",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 263,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "tli",
+          "iso_codes": "tli",
+          "latitude": 59,
+          "macroarea": "North America",
+          "pk": 2372,
+          "ascii_name": "tlingit",
+          "name": "Tlingit",
+          "description": null,
+          "markup_description": null,
+          "longitude": -135
+        }
+      },
+      "id": "tli",
+      "geometry": {
+        "coordinates": [
+          225,
+          59
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Tzutujil",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 250,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "tzu",
+          "iso_codes": "tzj",
+          "latitude": 14.6666666667,
+          "macroarea": "North America",
+          "pk": 2325,
+          "ascii_name": "tzutujil",
+          "name": "Tzutujil",
+          "description": null,
+          "markup_description": null,
+          "longitude": -91.3333333333
+        }
+      },
+      "id": "tzu",
+      "geometry": {
+        "coordinates": [
+          268.6666666667,
+          14.6666666667
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Udihe",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 21,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "udh",
+          "iso_codes": "ude",
+          "latitude": 47.6666666667,
+          "macroarea": "Eurasia",
+          "pk": 2184,
+          "ascii_name": "udihe",
+          "name": "Udihe",
+          "description": null,
+          "markup_description": null,
+          "longitude": 136.25
+        }
+      },
+      "id": "udh",
+      "geometry": {
+        "coordinates": [
+          136.25,
+          47.6666666667
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Wari'",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 121,
+          "jsondata": {},
+          "samples_100": true,
+          "id": "war",
+          "iso_codes": "pav",
+          "latitude": -11.3333333333,
+          "macroarea": "South America",
+          "pk": 2491,
+          "ascii_name": "wari",
+          "name": "Wari'",
+          "description": null,
+          "markup_description": null,
+          "longitude": -65
+        }
+      },
+      "id": "war",
+      "geometry": {
+        "coordinates": [
+          295,
+          -11.3333333333
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Waskia",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 437,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "wsk",
+          "iso_codes": "wsk",
+          "latitude": -4.5,
+          "macroarea": "Papunesia",
+          "pk": 2168,
+          "ascii_name": "waskia",
+          "name": "Waskia",
+          "description": null,
+          "markup_description": null,
+          "longitude": 146
+        }
+      },
+      "id": "wsk",
+      "geometry": {
+        "coordinates": [
+          146,
+          -4.5
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Yagua",
+        "language": {
+          "samples_200": true,
+          "genus_pk": 343,
+          "jsondata": {},
+          "samples_100": true,
+          "id": "yag",
+          "iso_codes": "yad",
+          "latitude": -3.5,
+          "macroarea": "South America",
+          "pk": 2470,
+          "ascii_name": "yagua",
+          "name": "Yagua",
+          "description": null,
+          "markup_description": null,
+          "longitude": -72
+        }
+      },
+      "id": "yag",
+      "geometry": {
+        "coordinates": [
+          288,
+          -3.5
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "value_numeric": 4,
+        "value_name": "Pronouns and nouns",
+        "icon": "http://wals.info/static/icons/cd00.png",
+        "name": "Yelî Dnye",
+        "language": {
+          "samples_200": false,
+          "genus_pk": 502,
+          "jsondata": {},
+          "samples_100": false,
+          "id": "yel",
+          "iso_codes": "yle",
+          "latitude": -11.3666666667,
+          "macroarea": "Papunesia",
+          "pk": 2198,
+          "ascii_name": "yeli dnye",
+          "name": "Yelî Dnye",
+          "description": null,
+          "markup_description": null,
+          "longitude": 154.166666667
+        }
+      },
+      "id": "yel",
+      "geometry": {
+        "coordinates": [
+          154.166666667,
+          -11.3666666667
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}
