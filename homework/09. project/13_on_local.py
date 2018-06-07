@@ -6,7 +6,6 @@
 import re
 from random import uniform
 from collections import defaultdict
-# import json
 import os.path
 from flask import Flask
 from flask import request, render_template
@@ -36,8 +35,8 @@ def gen_tokens(data):
             yield token
 
             
-def gen_trigrams(tokens, word_last):
-    t0, t1 = word_last, '$'
+def gen_trigrams(tokens):
+    t0, t1 = '$', '$'
     for t2 in tokens:
         yield t0, t1, t2
         if t2 in '.!?':
@@ -48,17 +47,14 @@ def gen_trigrams(tokens, word_last):
             t0, t1 = t1, t2
 
             
-def train(corpus, word_last):
+def train(corpus):
     data = gen_lines(corpus)
     tokens = gen_tokens(data)
-    trigrams = gen_trigrams(tokens, word_last)
-
+    trigrams = gen_trigrams(tokens)
     bi, tri = defaultdict(lambda: 0.0), defaultdict(lambda: 0.0)
-
     for t0, t1, t2 in trigrams:
         bi[t0, t1] += 1
         tri[t0, t1, t2] += 1
-        
     model = {}
     for (t0, t1, t2), freq in tri.items():
         if (t0, t1) in model:
@@ -68,18 +64,41 @@ def train(corpus, word_last):
     return model
 
 
-def generate_sentence(model):
+def generate_sentence(model, word_last):
     phrase = ''
-    t0, t1 = '$', '$'
+    t0, t1 = '$', word_last
+    phrase += t1
     while 1:
-        t0, t1 = t1, unirand(model[t0, t1])
+        try:
+            t0, t1 = t1, unirand(model[t0, t1])
+        except:
+            return '.'
         if t1 == '$':
             break
-        if t1 in ('.!?,;:') or t0 == '$':
+        if t1 in ('.!?,;:\'') or t0 == '$':
+            phrase += t1
+        elif t0 in ('\''):
             phrase += t1
         else:
             phrase += ' ' + t1
-    return phrase.capitalize()
+    phrase_ = get_names(phrase)
+    return phrase_
+
+
+def get_names(phrase):
+    names = ['Clay', 'Jensen', 'Hannah', 'Baker', 'Tony', 'Padilla', 'Jessica', 'Davis', 'Justin', 'Foley',
+             'Bryce', 'Walker', 'Alex', 'Standall', 'Zach', 'Dempsey', 'Tyler', 'Down', 'Lainie', 'Jensen',
+             'Kevin', 'Porter', 'Olivia', 'Baker', 'Andy', 'Baker', 'Matt', 'Jensen', 'Courtney', 'Crimsen',
+             'Marcus', 'Cole', 'Sheri', 'Holland', 'Ryan', 'Shaver', 'Skye', 'Miller', 'Montgomery', 'Jeff',
+             'Atkins', 'Gary', 'Bolan', 'Pam', 'Bradley', 'Caleb', 'Mackenzie', 'Jackie', 'Brad', 'Kat',
+             'Bill', 'Greg', 'Davis', 'Karen', 'Dempsey', 'Todd', 'Crimsen', 'Dennis', 'Vasquez', 'Barry',
+             'Walker', 'Nora', 'Walker', 'Carolyn', 'Standall', 'Chlöe', 'Rice', 'Sonya', 'Struhl', 'Scott',
+             'Reed', 'Nina', 'Jones', 'Rick', 'Wlodimierz']
+    for _word in phrase.split():
+        word = _word.strip('.!?,;:\'').capitalize()
+        if word in names:
+            phrase = phrase.replace(_word, word)
+    return phrase
 
 
 def unirand(seq):
@@ -96,16 +115,20 @@ def unirand(seq):
 @app.route('/answer')
 def answer(word=None, res=None):
     s = str(request.args["word"])
-    sent = s.split()
-    word_last = sent[len(sent)-1]
-    word = "— " + str(request.args["word"]).capitalize()
-    model = train('13reasons.txt', word_last)
-    res = generate_sentence(model)
+    sent = s.strip('.!?,;:\'\"\/\\').split()
+    word_last = sent[len(sent)-1].lower()
+    s = "— " + s
+    model = train('13reasons.txt')
+    res = generate_sentence(model, word_last)
+    for word in res.split():
+        if word.isupper() == False:
+            res = res.replace(word, word.capitalize())
+        break
     if "- " not in res:
         res = "— " + res
     else:
         res = res.replace("- ", "— ")
-    return render_template('a.html', word=word, res=res)
+    return render_template('a.html', word=s, res=res)
 
 
 if __name__ == '__main__':

@@ -14,10 +14,19 @@
 		<h2 class="text-center title"><br><i>{{ word }}</i><br><i>{{ res }}</i></h2><br>
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">    
-				<h3>Continue typing in something:
+				<h3>Continue typing in something or keep refreshing to get new answers:
 				</h3>
 				<br><input type="text" name="word"><br><br>
-				<p><input type="submit" value="Send"></p>    
+				<p><input type="submit" value="Send"></p>
+				<FORM>
+				<input TYPE="button" VALUE="Refresh" ONCLICK="ReloadButton()">
+				<script>
+				function ReloadButton()
+				{
+				location.href="";
+				}
+				</script>
+				</FORM>
 			</div>
 		</div>
 	</div>
