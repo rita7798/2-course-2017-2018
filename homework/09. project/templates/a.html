@@ -1,25 +1,149 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	
-	<title>dialogue</title>
+	<title>chat</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		* {
+		    box-sizing: border-box;
+		}
+		body {
+			font-family: "Times New Roman", Times, serif; 
+			font-size: 150%;
+		    margin: 0;
+		}
+
+		.center {
+	    	text-align: center;
+		}
+
+		.header {
+		    background-color: #000000
+		    padding: 10px;
+		    text-align: center;
+		    color:#990033;
+		    font-size: 20px
+		}
+
+		.column {
+		    float: left;
+    		padding: 10px;
+		}
+		/* Left and right column */
+		.column.side {
+		    width: 30%;
+		}
+		/* Middle column */
+		.column.middle {
+		    width: 40%;
+		}
+
+		h1 {
+			border:3px solid #336699;
+		    /*border: 1px solid black;*/
+   			/*width: 600px;*/
+ 			/*padding: 25px;*/
+  			box-sizing: border-box;
+  			text-align: justify;
+  			vertical-align: middle;
+  			margin: auto ;
+  			width: 50%;
+    		padding: 10px;
+		}
+
+		h6   {
+			font-size: 20px;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+		    content: "";
+		    display: table;
+		    clear: both;
+		}
+
+		.footer {
+		    background-color: #F1F1F1;
+		    text-align: center;
+		    padding: 10px;
+		}
+
+		p    {
+			margin: 10px 50px 10px 100px;
+			color: orange;
+			text-align: center;
+			font-size:5vw;
+		}
+
+		input[type=text] {
+		    width: 85%;
+		    padding: 12px 20px;
+		    margin: 8px 10px;
+		    box-sizing: border-box;
+		    border: 2px solid #990033;
+		    border-radius: 8px;
+		    font-size:20px;
+		    float:left;
+		}
+
+		input[type=text]:focus {
+	    	border: 3px solid #555;
+			font-size:30px;
+			float:left;
+		}
+
+
+		input[type=submit]{
+ 		    background-color: #4CAF50;
+		    border: none;
+		    color: white;
+		    padding: 16px 32px;
+		    text-decoration: none;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		    font-size:1.5vw;
+		    position:absolute;
+		    border-radius: 8px;
+		}
+
+		.container-4{
+			overflow: hidden;
+			width: 300px;
+			vertical-align: middle;
+			white-space: nowrap;
+		}
+
+		/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+		@media screen and (max-width:600px) {
+		    .column {
+		        width: 100%;
+		    }
+	</style>
+
 </head>
 
+<body>
+			<div class="header">
+			<h3> </h3>
+		</div>
 
 <!-- Main (Home) section -->
 <section class="section" id="head">
 	<form action="http://127.0.0.1:5000/answer" method="GET">
-	<div class="container">
-		<h2 class="text-center title"><br><i>{{ word }}</i><br><i>{{ res }}</i></h2><br>
+	<div class="container"><br>
+		<h1 class="text-center title"><i>{{ word }}</i><br><i>{{ res }}</i></h1><br>
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">    
-				<h3>Continue typing in something or keep refreshing to get new answers:
-				</h3>
-				<br><input type="text" name="word"><br><br>
-				<p><input type="submit" value="Send"></p>
+				<h6>Continue typing in something or keep refreshing to get new answers:</h6>
+
+<div class=".row:after">
+
+	
+	<input type="text" placeholder="Type in your phrase there" name="word">
+			<div><input type="submit" value="Send"></div> 
 				<FORM>
-				<input TYPE="button" VALUE="Refresh" ONCLICK="ReloadButton()">
+				<input type="button" value="Refresh" ONCLICK="ReloadButton()">
 				<script>
 				function ReloadButton()
 				{
@@ -27,6 +151,7 @@
 				}
 				</script>
 				</FORM>
+			</div>
 			</div>
 		</div>
 	</div>
