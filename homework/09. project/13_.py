@@ -76,9 +76,9 @@ def generate_sentence(model, word_last):
             return '.'
         if t1 == '$':
             break
-        if t1 in ('.!?,;:\'') or t0 == '$':
+        if t1 in (".!?,;:\'") or t0 == '$':
             phrase += t1
-        elif t0 in ('\''):
+        elif t0 in ("\'"):
             phrase += t1
         else:
             phrase += ' ' + t1
@@ -87,7 +87,7 @@ def generate_sentence(model, word_last):
 
 
 def get_names(phrase):
-    names = ['Clay', 'Jensen', 'Hannah', 'Baker', 'Tony', 'Padilla', 'Jessica', 'Davis', 'Justin', 'Foley',
+    arr = ['Clay', 'Jensen', 'Hannah', 'Baker', 'Tony', 'Padilla', 'Jessica', 'Davis', 'Justin', 'Foley',
              'Bryce', 'Walker', 'Alex', 'Standall', 'Zach', 'Dempsey', 'Tyler', 'Down', 'Lainie', 'Jensen',
              'Kevin', 'Porter', 'Olivia', 'Baker', 'Andy', 'Baker', 'Matt', 'Jensen', 'Courtney', 'Crimsen',
              'Marcus', 'Cole', 'Sheri', 'Holland', 'Ryan', 'Shaver', 'Skye', 'Miller', 'Montgomery', 'Jeff',
@@ -95,6 +95,7 @@ def get_names(phrase):
              'Bill', 'Greg', 'Davis', 'Karen', 'Dempsey', 'Todd', 'Crimsen', 'Dennis', 'Vasquez', 'Barry',
              'Walker', 'Nora', 'Walker', 'Carolyn', 'Standall', 'Chlöe', 'Rice', 'Sonya', 'Struhl', 'Scott',
              'Reed', 'Nina', 'Jones', 'Rick', 'Wlodimierz']
+    names = set(arr)
     for _word in phrase.split():
         word = _word.strip('.!?,;:\'').capitalize()
         if word in names:
@@ -116,7 +117,7 @@ def unirand(seq):
 @app.route('/answer')
 def answer(word=None, res=None):
     s = str(request.args["word"])
-    sent = s.strip('.!?,;:\'\"\/\\').split()
+    sent = s.strip('.!?&,;:\'\"\/\\').split()
     word_last = sent[len(sent)-1].lower()
     s = "— " + s
     model = train('13reasons.txt')

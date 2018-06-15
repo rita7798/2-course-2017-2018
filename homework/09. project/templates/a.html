@@ -9,23 +9,30 @@
 		    box-sizing: border-box;
 		}
 		body {
-			font-family: "Times New Roman", Times, serif; 
+			font-family: Arial; 
 			font-size: 150%;
 		    margin: 0;
 		}
+
+		.col-1 {width: 20%;
+				float: left;}
+		.col-4 {width: 60%;
+				float: left;}
+		.col-7 {width: 20%;
+				float: left;}
 
 		.center {
 	    	text-align: center;
 		}
 
+		/* Style the header */
 		.header {
-		    background-color: #000000
+		    background-color: #f1f1f1;
 		    padding: 10px;
 		    text-align: center;
 		    color:#990033;
 		    font-size: 20px
 		}
-
 		.column {
 		    float: left;
     		padding: 10px;
@@ -39,21 +46,9 @@
 		    width: 40%;
 		}
 
-		h1 {
-			border:3px solid #336699;
-		    /*border: 1px solid black;*/
-   			/*width: 600px;*/
- 			/*padding: 25px;*/
-  			box-sizing: border-box;
-  			text-align: justify;
-  			vertical-align: middle;
-  			margin: auto ;
-  			width: 50%;
-    		padding: 10px;
-		}
-
 		h6   {
-			font-size: 20px;
+			color:#990033;
+			font-size: 17px;
 		}
 
 		/* Clear floats after the columns */
@@ -69,17 +64,10 @@
 		    padding: 10px;
 		}
 
-		p    {
-			margin: 10px 50px 10px 100px;
-			color: orange;
-			text-align: center;
-			font-size:5vw;
-		}
-
 		input[type=text] {
-		    width: 85%;
+		    width: 77%;
 		    padding: 12px 20px;
-		    margin: 8px 10px;
+		    margin: 8px 10px 10px;
 		    box-sizing: border-box;
 		    border: 2px solid #990033;
 		    border-radius: 8px;
@@ -89,7 +77,7 @@
 
 		input[type=text]:focus {
 	    	border: 3px solid #555;
-			font-size:30px;
+			font-size:25px;
 			float:left;
 		}
 
@@ -120,41 +108,38 @@
 		        width: 100%;
 		    }
 	</style>
-
 </head>
-
 <body>
-			<div class="header">
-			<h3> </h3>
-		</div>
-
-<!-- Main (Home) section -->
-<section class="section" id="head">
-	<form action="http://127.0.0.1:5000/answer" method="GET">
-	<div class="container"><br>
-		<h1 class="text-center title"><i>{{ word }}</i><br><i>{{ res }}</i></h1><br>
+	<div class="header">
+  		<h2>TH1RTEEN R3ASONS WHY</h2>	
+	</div>		
+	<section class="section" id="head">
+		<form action="http://chat-with-13reasons.herokuapp.com/answer" method="GET">
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">    
-				<h6>Continue typing in something or keep refreshing to get new answers:</h6>
-
-<div class=".row:after">
-
-	
-	<input type="text" placeholder="Type in your phrase there" name="word">
-			<div><input type="submit" value="Send"></div> 
-				<FORM>
-				<input type="button" value="Refresh" ONCLICK="ReloadButton()">
-				<script>
-				function ReloadButton()
-				{
-				location.href="";
-				}
-				</script>
-				</FORM>
+			<div class="col-1"><h3></h3></div>
+			<div class="col-4">
+			<h1><i>{{ word }}</i><br><i>{{ res }}</i></h1>
 			</div>
-			</div>
+			<div class="col-7"><h6>— . means there is no answer to your phrase, try something else</h6></div>
 		</div>
+	<div class="col-1"><h3></h3></div>
+	<div class="col-4">    
+		<h4>Continue typing something or keep refreshing to get new answers:</br></h4>
+		<input type="text" placeholder="Type there" name="word">
+			<div><input type="submit" value="Send"></div> 
 	</div>
+	<div class="col-7"><h3></h3></div>
+	<div class="row">
+		<div class="col-1"><h3></h3></div>
+		<img class="center" src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2017%2F03%2Fdarkness-visible-in-13-reasons-why.jpg&w=800&q=85" style="max-width:100%;">
+		<div class="col-7"><h3></h3></div>
+	</div>
+
+<div class="footer">
+  <h3>Margarita Berseneva</h3>
+  <h5>2018</h5>
+</div>
+
 </section>
 </body>
 </html>

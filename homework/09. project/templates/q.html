@@ -9,10 +9,25 @@
 		    box-sizing: border-box;
 		}
 		body {
-			font-family: "Times New Roman", Times, serif; 
+			font-family: Arial; 
 			font-size: 150%;
 		    margin: 0;
 		}
+
+		.col-1 {width: 15%;
+				float: left;}
+		.col-2 {width: 20%;
+				float: left;}
+		.col-3 {width: 5%;
+				float: left;}
+		.col-4 {width: 20%;
+				float: left;}
+		.col-5 {width: 5%;
+				float: left;}
+		.col-6 {width: 20%;
+				float: left;}
+		.col-7 {width: 15%;
+				float: left;}
 
 		.center {
 	    	text-align: center;
@@ -40,11 +55,12 @@
 		}
 
 		h4 {
-			border:3px solid #336699;
+			/*border:3px solid #336699;*/
 		    /*border: 1px solid black;*/
    			/*width: 600px;*/
  			/*padding: 25px;*/
-  			box-sizing: border-box;
+  			/*box-sizing: border-box;*/
+  			color: #4CAF50;
   			text-align: justify;
   			vertical-align: middle;
   			margin: auto;
@@ -69,17 +85,10 @@
 		    padding: 10px;
 		}
 
-		p    {
-			margin: 10px 50px 10px 100px;
-			color: orange;
-			text-align: center;
-			font-size:5vw;
-		}
-
 		input[type=text] {
-		    width: 85%;
+		    width: 63%;
 		    padding: 12px 20px;
-		    margin: 8px 10px;
+		    margin: 8px 10px 10px;
 		    box-sizing: border-box;
 		    border: 2px solid #990033;
 		    border-radius: 8px;
@@ -89,7 +98,7 @@
 
 		input[type=text]:focus {
 	    	border: 3px solid #555;
-			font-size:30px;
+			font-size:25px;
 			float:left;
 		}
 
@@ -125,41 +134,60 @@
 
 
 <body>
-	<form action="http://127.0.0.1:5000/answer" method="GET">
+	<form action="http://chat-with-13reasons.herokuapp.com/answer" method="GET">
 		
 
 		<div class="header">
-  			<h2>Hi there!</h2>	
+  			<h2>TH1RTEEN R3ASONS WHY</h2>	
 		</div>
 		
+<div class="row">
+
+<div class="col-1"><h3></h3></div>
+
+  <div class="col-2"><h3 class='center'>Chat with characters from the series </br>'13 Reasons Why'</h3></div>
+
+<div class="col-3"><h3></h3></div>
+
+  <div class="col-4">
+    <h3 class='center'>You can start from questions like:
+    <h5 class='left' ><i>
+    Who is Hannah?<br>
+    Why 13?<br>
+    What is the thing?</i><br>
+    etc.<br></h5>
+	</h3>
+  </div>
+
+<div class="col-5"><h3></h3></div>
+
+  <div class="col-6"><h3 class='center'>Just type the phrase below in the box</h3></div>
+
+<div class="col-7"></div>
+
+</div>
 
 
 <div class="row">
-  <div class="column side"><h3 class='center'>Chat with characters from the serial '13 Reasons Why'</h3></div>
-  <div class="column middle">
-    <h3 class='center'>You can start from questions like:<br>
-    <h4><i>
-	Who is Hannah?<br>
-	Why 13?<br>
-	What is the thing? not working...</i>etc.<br></h4>
-	</h3>
-  </div>
-  <div class="column side"><h3 class='center'>Just type in the phrase below in the box</h3></div>
-</div>
 
-
-<div class=".row:after">
-
+<div class="col-1"><h3></h3></div>
 	
 	<input type="text" placeholder="Type there" name="word">
 			<div><input type="submit" placeholder="Some phrase"  value="Send"></div> 
+<div class="col-7"><h3></h3></div>
+
 </div>
 
-<!-- <img src=".//images//13r.jpg" style="max-width:100%;height:650px;"> -->
+<div class="col-1"><h3></h3></div>
+
+<img class="center" src="https://i0.wp.com/studybreaks.com/wp-content/uploads/2018/03/568171.jpg?w=1736&ssl=1" style="max-width:100%;height:650px;">
+
+<div class="col-7"><h3></h3></div>
 
 
 <div class="footer">
-  <h6>Margarita Berseneva</h6>
+  <h3>Margarita Berseneva</h3>
+  <h5>2018</h5>
 </div>
 </body>
 </html>
