@@ -19,7 +19,7 @@ def start():
     return render_template('q.html')
 
 
-alphabet = re.compile(u'[a-zA-Z0-9-]+|[.,:;?!]+')
+alphabet = re.compile(u'[a-zA-Z0-9-]+|[.,:;?!\']+')
 data = []
 
 
